@@ -10,7 +10,7 @@ public class ArrayOps {
         
         // secondMaxValue Test 
         System.out.println("secondMaxValue Test:");
-        int [] arr1 = {-202, 48, 13, 7, 8};
+        int [] arr1 = {2, 8, 3, 7, 8};
         System.out.println("The second max value is " + secondMaxValue(arr1));
         System.out.println("----------------------------");
 
@@ -41,7 +41,7 @@ public class ArrayOps {
         int missing = 0;
         
         for (int i = 0; i < completeSet.length; i++) {
-            completeSet[i] = i + 1;
+            completeSet[i] = i;
         }
 
         for (int a = 0; a < completeSet.length; a++) {
@@ -59,14 +59,18 @@ public class ArrayOps {
 
     public static int secondMaxValue(int [] array) {
         int firstMaxValue = 0;
+        int firstMaxValueIndex = 0;
         int secondMaxValue = 0;
 
         for (int i = 0; i < array.length; i++) {
-            if (firstMaxValue < array[i]) firstMaxValue = array[i];
+            if (firstMaxValue < array[i]) {
+                firstMaxValue = array[i];
+                firstMaxValueIndex = i;
+            }
         }
 
         for (int i = 0; i < array.length; i++) {
-            if ((secondMaxValue < array[i]) && (array[i] != firstMaxValue)) secondMaxValue = array[i];
+            if ((secondMaxValue < array[i]) && (firstMaxValueIndex != i)) secondMaxValue = array[i];
         }
         return secondMaxValue;
     }
