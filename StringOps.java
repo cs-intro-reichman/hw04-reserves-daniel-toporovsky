@@ -26,13 +26,13 @@ public class StringOps {
 
         //capVowelsLowRest Test
         System.out.println("capVowelsLowRest Test:");
-        String text = "yellow";
+        String text = "One two tHRee world";
         System.out.println(capVowelsLowRest(text));
         System.out.println("-----------------------------");
 
         //camelCase Test
         System.out.println("camelCase Test:");
-        String camel = "        Intro to  coMPUter      sCIEncE ";
+        String camel = "Hello World";
         System.out.println(camelCase(camel));
         System.out.println("-----------------------------");
 
@@ -58,7 +58,7 @@ public class StringOps {
             //If the char is a lowercase letter
             if (lower(string, i)) {
                 switch (string.charAt(i)) {
-                    case 97: case 101: case 105: case 111: case 117:
+                    case 'a': case 'e': case 'i': case 'o': case 'u':
                         formated += (char)(string.charAt(i) - 32);
                         break;
                     default:
@@ -70,7 +70,7 @@ public class StringOps {
             //If the char is a uppercase letter 
             else if (upper(string, i)) {
                 switch (string.charAt(i)) {
-                    case 97: case 101: case 105: case 111: case 117:
+                    case 'A': case 'E': case 'I': case 'O': case 'U':
                         formated += string.charAt(i);
                         break;
                     default:
@@ -132,7 +132,7 @@ public class StringOps {
                 tmp += (char)(string.charAt(i) + 32);                
             }
             else if (lower(string, i)) {
-                tmp += i;
+                tmp += string.charAt(i);
             }
             i++;
         }
